@@ -1,0 +1,35 @@
+.body-Index{
+    background-color: #670f22;
+    text-align: center;
+}
+
+.navbar-Index{
+    background-color:darkblue;
+    margin-top: -7px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.Titulo{
+
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Segoe Print", cursive;
+    color: white;
+
+}
+
+.Inicio{
+
+    display: inline-block;
+    vertical-align: middle;
+    align-items: center;
+    background-color: aqua;
+    border-radius: 20px;
+
+}
