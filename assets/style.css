@@ -58,6 +58,7 @@ input{
     display: flex;
     background-color:crimson;
     justify-content: center;
+    vertical-align: left;
     font-family: 'Georgia', cursive;
     border-radius: 50px;
     margin-top: 70px;
