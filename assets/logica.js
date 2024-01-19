@@ -1,37 +1,47 @@
-let valorPantalla = '';
+function enviarDatos(){
 
-function limpiarPantalla(){
+    const nombre = document.getElementById('nombre').value;
 
-    valorPantalla = '';
-    actualizarPantalla();
-
-}
-
-function agregarCaracter(char){
-
-    valorPantalla += char;
-    actualizarPantalla();
+    enviarDatosAlServidor(nombre)
+        .then(mensajeAgradecimiento)
+        .catch(mensajeError);
 
 }
 
-function calcular(){
+function enviarDatosAlServidor(nombre){
 
-    try{
+    return new Promise((resolve,reject) => {
 
-        valorPantalla = eval(valorPantalla).toString();
+        setTimeout(() =>{
 
-        actualizarPantalla();
+            const exito = (nombre.toLowerCase() !== 'error');
 
-    }catch(e){
-        valorPantalla = 'Error!'
-        actualizarPantalla();
+            if(exito){
 
-    }
+                resolve('Bienvenido al sistema');
+
+            }else{
+                reject('Acceso Denegado')
+            }
+
+        }, 2000);
+
+    });
 
 }
 
-function actualizarPantalla(){
+function mensajeAgradecimiento(mensaje){
 
-    document.getElementById('pantalla').value = valorPantalla;
+    const mensajeElement = document.getElementById('mensaje');
+    mensajeElement.textContent = mensaje;
+    mensajeElement.classList.remove('oculto');
+
+}
+
+function mensajeError(error){
+
+    const mensajeElement = document.getElementById('mensaje');
+    mensajeElement.textContent = error;
+    mensajeElement.classList.remove('oculto');
 
 }
