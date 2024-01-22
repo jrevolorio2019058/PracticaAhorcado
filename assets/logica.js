@@ -18,9 +18,19 @@ function calcular(){
 
     try{
 
-        valorPantalla = eval(valorPantalla).toString();
+        if (valorPantalla.includes('/0')) {
 
-        actualizarPantalla();
+            valorPantalla = "Error, No se puede dividir entre cero"
+
+            actualizarPantalla();
+            
+        } else {
+
+            valorPantalla = eval(valorPantalla).toString();
+
+            actualizarPantalla();
+            
+        }
 
     }catch(e){
         valorPantalla = 'Error!'
